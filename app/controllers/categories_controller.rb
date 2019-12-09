@@ -41,15 +41,23 @@ class CategoriesController < ApplicationController
     end
   end
 
-    private
-    def set_category
-      @category = Category.find(params[:id])
-    end
-
-    def category_params
-      params.require(:category).permit(:name,:description)
-    end
-
-
-
+  def destroy
+     @category.destroy
+     respond_to do |format| 
+       format.html {redirect_to categories_path,notice: "Category successfully destroyed"}
+       format.json {head :no_content}
+     end
   end
+
+  private
+  def set_category
+    @category = Category.find(params[:id])
+  end
+
+  def category_params
+    params.require(:category).permit(:name,:description)
+  end
+
+
+
+end
