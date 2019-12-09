@@ -57,7 +57,7 @@ RSpec.describe CategoriesController, type: :request do
 
   end
 
-  describe "PATCH/update" do
+  describe "PATCH/update/1" do
     let(:valid_params){{category:{name: "Time Travel part 2"}}}
     before(:each){patch category_path(Category.last),params: valid_params}
 
@@ -67,6 +67,16 @@ RSpec.describe CategoriesController, type: :request do
 
     it 'returns a response with HTML content type' do 
       expect(response.content_type).to eq('text/html')
+    end
+
+  end
+
+  describe "DELETE/destroy/1" do 
+    before(:each){@category = FactoryBot.create(:category)}
+    
+    it "decrements category count by 1" do 
+       expect{delete category_path(@category)}.to change(Category,:count).by(-1)
+       expect(response).to have_http_status(302)
     end
 
   end
