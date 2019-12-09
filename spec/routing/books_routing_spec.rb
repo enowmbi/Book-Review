@@ -17,11 +17,15 @@ RSpec.describe BooksController,type: :routing do
     end
 
     it "routes to #new" do 
-       expect(:get => "/books/new").to route_to("books#new")
+      expect(:get => "/books/new").to route_to("books#new")
     end
 
     it "routes to #create" do 
-   expect(:post => "/books").to route_to("books#create")
+      expect(:post => "/books").to route_to("books#create")
+    end
+
+    it "routes to #edit" do 
+      expect(:get => "/books/1/edit").to route_to("books#edit",:id => "1")
     end
 
   end
