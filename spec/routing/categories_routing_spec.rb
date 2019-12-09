@@ -23,7 +23,13 @@ RSpec.describe CategoriesController, type: :routing do
       expect(:get => '/categories/1/edit').to route_to("categories#edit", :id => "1")
     end
 
-    
+    it "routes to #update" do 
+      expect(:patch => '/categories/1').to route_to("categories#update",:id =>"1")
+    end
+
+    it "routes to #update" do 
+       expect(:put => '/categories/1').to route_to("categories#update",:id =>"1")
+    end
 
   end
 end
