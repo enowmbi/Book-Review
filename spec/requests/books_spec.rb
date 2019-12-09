@@ -16,7 +16,7 @@ RSpec.describe "Books", type: :request do
   end
 
   describe "GET/show/1" do 
-    before(:all) {get '/books/1'}
+    before(:all) {get "/books/#{Book.first.id}"}
 
     it "returns a response with http status of success" do 
       expect(response).to have_http_status(:success)
