@@ -1,0 +1,180 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/enow/projects/ruby_and_rails/book_review/config/environment.rb": [
+        null,
+        1,
+        null,
+        null,
+        1
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/application.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/boot.rb": [
+        1,
+        null,
+        1,
+        1
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/application_controller_renderer.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/assets.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/backtrace_silencers.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/content_security_policy.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/cookies_serializer.rb": [
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/inflections.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/mime_types.rb": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/initializers/wrap_parameters.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/config/routes.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/app/helpers/application_helper.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1575858401
+  }
+}
