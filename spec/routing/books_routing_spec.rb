@@ -28,6 +28,16 @@ RSpec.describe BooksController,type: :routing do
       expect(:get => "/books/1/edit").to route_to("books#edit",:id => "1")
     end
 
+    #using PATCH
+    it "routes to #update" do 
+      expect(:patch => "/books/1").to route_to("books#update",:id => "1")
+    end
+
+    #using PUT
+    it "routes to #update" do 
+      expect(:put => "/books/1").to route_to("books#update",:id => "1")
+    end
+
   end
 
 end
