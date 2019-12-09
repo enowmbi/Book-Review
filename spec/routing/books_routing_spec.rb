@@ -39,7 +39,7 @@ RSpec.describe BooksController,type: :routing do
     end
 
     it "does not route to #delete" do 
-      expect(:delete => "/books/1").not_to route_to("books#destroy",:id=> "1")
+      expect(:delete => "/books/1").not_to route_to("books#delete",:id=> "1")
     end
   end
 
