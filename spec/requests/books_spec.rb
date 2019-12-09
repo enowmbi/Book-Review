@@ -69,7 +69,21 @@ RSpec.describe "Books", type: :request do
 
   end
 
+  describe "Delete/books/1" do 
+    before(:all) do 
+      @book = Book.last
+    end
+
+    it "reduces books collection by 1" do 
+      expect{delete book_url(@book)}.to change(Book,:count).by(-1)
+      expect(response).to have_http_status(302)
+    end
+
+  end
 
 
 
 end
+
+
+
