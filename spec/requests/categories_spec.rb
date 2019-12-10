@@ -30,6 +30,18 @@ RSpec.describe CategoriesController, type: :request do
     end
   end
 
+  describe "GET/new" do 
+    before(:each){get "/categories/new"}
+
+    it "returns a response with http status of success" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "returns a response with HTML content type" do 
+      expect(response.content_type).to eq("text/html")
+    end
+
+  end
 
   after(:all){ @@category.destroy }
 
