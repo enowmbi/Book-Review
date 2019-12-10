@@ -55,8 +55,9 @@ RSpec.describe CategoriesController, type: :request do
       expect(response.content_type).to eq("text/html")
     end
 
-
   end
+
+  
 
   after(:all){ @@category.destroy }
 
