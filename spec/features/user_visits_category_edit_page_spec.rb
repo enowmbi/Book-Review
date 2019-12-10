@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "user visits category edit page", type: :feature do 
 
+    before(:each){@category = FactoryBot.create(:category)} 
   scenario "successfully" do
-    @category = FactoryBot.create(:category) 
     visit categories_path
     expect(current_path).to eq(categories_path)
     click_link(@category.name)
