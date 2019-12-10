@@ -30,8 +30,23 @@ RSpec.describe "Books", type: :request do
     end
   end
 
+  describe "GET/edit" do 
+    before(:all) do 
+      @book = FactoryBot.create(:book)
+      get edit_book_path(@book)
+    end
+    it "returns a response with http status of success" do 
+      expect(response).to have_http_status(:success)
+    end
+
+    it "returns a response with HTML content type" do 
+      expect(response.content_type).to eq("text/html")
+    end
+  end
+
+
   describe "GET/new" do 
-    before(:all) {get '/books/new'}
+    before(:all) {get '/books/edit'}
     it "returns a response with http status of success" do 
       expect(response).to have_http_status(:success)
     end
