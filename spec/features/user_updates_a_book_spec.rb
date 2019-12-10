@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "user creates a book", type: :feature do
 
-  before(:all){@book = FactoryBot.create(:book)}
 
   scenario "successfully" do 
+    @book = FactoryBot.create(:book)
     visit book_path @book 
     expect(current_path).to eq(book_path(@book))
     click_on "Edit"
@@ -14,6 +14,7 @@ RSpec.describe "user creates a book", type: :feature do
     expect(current_path).to eq(book_path(@book))
 
   end
+
 
 
 
