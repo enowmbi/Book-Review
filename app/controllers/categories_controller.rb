@@ -8,6 +8,10 @@ class CategoriesController < ApplicationController
 
   end
 
+  def new
+    @category = Category.new
+  end
+
   private
   def set_category
      @category = Category.find(params[:id])
