@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "user visits book show page" , type: :feature do
 
-  before(:all){@book= FactoryBot.create(:book) } 
   scenario "successfully" do 
+    @book= FactoryBot.create(:book)
     visit root_path
     expect(page).to have_link("#{@book.title}")
     click_link @book.title
