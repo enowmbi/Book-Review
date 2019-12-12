@@ -11,4 +11,7 @@ class Book < ApplicationRecord
     return self.image.variant(resize: "250x250").processed
   end
 
+  def thumbnail_index
+     return self.image.variant(resize: "400x400").processed
+  end
 end
