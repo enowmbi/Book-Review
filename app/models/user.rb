@@ -7,5 +7,4 @@ class User < ApplicationRecord
 
    validates :admin?, presence: true
    
-   has_one_attached :image
 end
