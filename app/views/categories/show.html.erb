@@ -10,6 +10,8 @@
   <%= @category.description %>
 </p>
 
-<%= link_to 'Edit', edit_category_path %>
- | 
- <%= link_to 'Destroy', @category,method: :delete,data: {confirm: "Are you sure you want to delete #{@category.name} ?"}  %>
+<% if current_user && current_user.admin? == true %>
+  <%= link_to 'Edit', edit_category_path %>
+  | 
+  <%= link_to 'Destroy', @category,method: :delete,data: {confirm: "Are you sure you want to delete #{@category.name} ?"}  %>
+<% end %>
