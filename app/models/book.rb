@@ -5,4 +5,10 @@ class Book < ApplicationRecord
   validates :author, presence: true
 
   has_one_attached :image
+
+
+  def thumbnail
+    return self.image.variant(resize: "250x250").processed
+  end
+
 end
