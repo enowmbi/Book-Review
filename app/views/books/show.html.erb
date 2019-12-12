@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag(@book.thumbnail,class: "img img-thumbnail img-responsive") if @book.image.attached?  %>
+</p>
+<p>
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
