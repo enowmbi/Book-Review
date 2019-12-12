@@ -2,19 +2,21 @@
 
 <table class="table table-compressed">
   <thead>
-  <tr>
-    <th> Name </th> 
-    <th> Description </th>
+    <tr>
+      <th> Name </th> 
+      <th> Description </th>
     </tr>
   </thead>
   <tbody>
     <% @categories.each do |category|   %>
-        <tr> 
-          <td><%= link_to(category.name,category_path(category)) %></td>
-          <td><%= category.description %></td>
-          <tr>
-      <% end %>
+      <tr> 
+        <td><%= link_to(category.name,category_path(category)) %></td>
+        <td><%= category.description %></td>
+        <tr>
+        <% end %>
   </tbody>
 </table>
 
-<%= link_to "Add New Category",new_category_path,class: "btn btn-outline-primary" %>
+<% if current_user && current_user.admin? == true %>
+  <%= link_to "Add New Category",new_category_path,class: "btn btn-outline-primary" %>
+<% end %>
