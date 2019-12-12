@@ -42,6 +42,8 @@ gem 'bootstrap','>=4.3.1'
 gem 'jquery-rails'
 gem 'ratyrate'
 
+#Use devise for user authentication
+gem 'devise','>=4.7.1'
 
 
 group :development, :test do
