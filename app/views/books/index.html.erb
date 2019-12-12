@@ -18,4 +18,7 @@
       <% end %>
       </tbody>
   </table>
-  <%= link_to("Add New Book",new_book_path,class: "btn btn-outline-primary") %>
+
+  <% if user_signed_in? %>
+    <%= link_to("Add New Book",new_book_path,class: "btn btn-outline-primary") %>
+    <% end %>
