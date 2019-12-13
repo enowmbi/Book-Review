@@ -1,10 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <div class="col-md-4">
 <p>
   <%= image_tag(@book.thumbnail,class: "img img-thumbnail img-responsive") if @book.image.attached?  %>
 </p>
-
-
+<p>
+   <%= link_to('Add Review',new_book_review(@book))  %>
+</p>
+<p>
+  <%= link_to 'Back',:back %>
+  </p>
+  </div>
+  <div class="col-md-8">
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -25,8 +33,11 @@
   <%= @book.category.name %>
 </p>
 <% if user_signed_in? && @book.user_id == current_user.id %>
+  
   <%= link_to 'Edit', edit_book_path %>
   | 
   <%= link_to 'Destroy', @book,method: :delete,data: {confirm: "Are you sure you want to delete #{@book.title} ?"}  %>
 
 <% end %>
+</div>
+</div>
