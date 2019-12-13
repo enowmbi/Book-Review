@@ -7,6 +7,5 @@ class User < ApplicationRecord
    has_many :books, dependent: :destroy
    has_many :reviews, dependent: :destroy
 
-   validates :admin?, presence: true
    
 end
