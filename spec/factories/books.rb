@@ -3,5 +3,7 @@ FactoryBot.define do
     title { "Making Marriage Work" }
     description { "A must have for every person who wants to enjoy marital bliss" }
     author { "Pst.(Mrs.) Faith A. Oyedepo" }
+    user
+    category
   end
 end
