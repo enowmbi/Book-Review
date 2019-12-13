@@ -1,4 +1,4 @@
-<h1>Edit Review </h1>
+<h1>Edit Review for '<i><%= @book.title %></i>' </h1>
 <%= form_for([@book,@review]) do |form| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
