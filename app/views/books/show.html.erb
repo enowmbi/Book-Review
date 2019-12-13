@@ -25,11 +25,11 @@
     </p>
 
     <p>
-      <h3><%= @book.author %></h3>
+      <h3><small> by </small><%= @book.author %></h3>
     </p>
 
     <p>
-      <h2> Average Rating</h2>
+      <h3> Average Rating</h3>
       <strong><%= @average_rating %></strong>
       <h6><i><%= "Based on #{pluralize(@book.reviews.count,'review')}" %></i></h6>
     </p>
