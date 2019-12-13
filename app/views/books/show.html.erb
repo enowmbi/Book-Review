@@ -3,9 +3,13 @@
     <p>
       <%= image_tag(@book.thumbnail,class: "img img-thumbnail img-responsive") if @book.image.attached?  %>
     </p>
-    <p>
-      <%= link_to('Add Review',new_book_review_path(@book))  %>
-    </p>
+
+    <% if user_signed_in? %>
+      <p>
+        <%= link_to('Add Review',new_book_review_path(@book))  %>
+      </p>
+    <% end %>
+
     <p>
       <%= link_to 'Back',:back %>
     </p>
@@ -33,11 +37,11 @@
       <%= @book.description %>
     </p>
 
-      <% if user_signed_in? && @book.user_id == current_user.id %>
+    <% if user_signed_in? && @book.user_id == current_user.id %>
 
-      <%= link_to 'Edit', edit_book_path %>
+      <%= link_to 'Edit', edit_book_path,class: "btn btn-outline-primary" %>
       | 
-      <%= link_to 'Destroy', @book,method: :delete,data: {confirm: "Are you sure you want to delete #{@book.title} ?"}  %>
+      <%= link_to 'Destroy', @book,method: :delete,data: {confirm: "Are you sure you want to delete #{@book.title} ?"},class: "btn btn-outline-danger"  %>
 
     <% end %>
   </div>
