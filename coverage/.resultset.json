@@ -472,6 +472,9 @@
         1,
         1,
         null,
+        null,
+        1,
+        null,
         null
       ],
       "/home/enow/projects/ruby_and_rails/book_review/app/models/user.rb": [
@@ -481,8 +484,9 @@
         1,
         null,
         null,
-        null,
         1,
+        1,
+        null,
         null,
         null
       ],
@@ -494,8 +498,57 @@
       "/home/enow/projects/ruby_and_rails/book_review/app/helpers/application_helper.rb": [
         1,
         null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/app/controllers/reviews_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/enow/projects/ruby_and_rails/book_review/app/controllers/application_controller.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1576159512
+    "timestamp": 1576230985
   }
 }
