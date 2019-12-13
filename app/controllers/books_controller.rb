@@ -6,6 +6,11 @@ class BooksController < ApplicationController
   end
 
   def show
+    if @book.reviews.blank?
+      @average_rating = 0
+    else
+      @average_rating = @book.reviews.average(:rating).round(2)
+    end
   end
 
   def new
