@@ -6,7 +6,7 @@
   <%= image_tag(@book.thumbnail,class: "img img-thumbnail img-responsive") if @book.image.attached?  %>
 </p>
 <p>
-   <%= link_to('Add Review',new_book_review(@book))  %>
+   <%= link_to('Add Review',new_book_review_path(@book))  %>
 </p>
 <p>
   <%= link_to 'Back',:back %>
