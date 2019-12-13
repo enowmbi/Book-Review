@@ -2,6 +2,7 @@ class Book < ApplicationRecord
 
   belongs_to :user, dependent: :destroy
   belongs_to :category, dependent: :destroy
+  has_many :reviews
 
   has_one_attached :image
 
