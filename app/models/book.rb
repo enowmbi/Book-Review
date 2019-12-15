@@ -12,7 +12,7 @@ class Book < ApplicationRecord
   validate :validate_image
 
   def thumbnail
-    return self.image.variant(resize: "250x250").processed
+    return self.image.variant(resize: "400x400").processed
   end
 
   def thumbnail_index
