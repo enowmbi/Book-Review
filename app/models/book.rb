@@ -19,6 +19,8 @@ class Book < ApplicationRecord
     return self.image.variant(resize: "350x250!").processed
   end
 
+  default_scope ->{ order("Updated_at DESC")}
+
   private 
   def validate_image
     if image.attached? == false
