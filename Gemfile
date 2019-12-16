@@ -45,6 +45,9 @@ gem 'ratyrate'
 #Use devise for user authentication
 gem 'devise','>=4.7.1'
 
+#Use will_paginate for pagination
+gem 'will_paginate'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
