@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show,:edit,:update,:destroy,:books]
   before_action :authenticate_user!,except: [:index,:show,:books]
   def index
-    @categories = Category.all
+    @categories = Category.all.paginate(page: params[:page],per_page: 3)
   end
 
   def show
