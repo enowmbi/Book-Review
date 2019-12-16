@@ -1,0 +1,13 @@
+<div class="row">
+  <% @books.each do |book| %>
+    <div class="col-md-3">
+      <a href="/books/<%= book.id %>" >
+        <%= image_tag book.thumbnail_index,class: "img-thumbnail img-responsive",alt: "#{book.title}(#{book.author})"%>      
+      </a>
+    </div>
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+  <%= link_to("Add New Book",new_book_path,class: "btn btn-outline-primary") %>
+<% end %>
