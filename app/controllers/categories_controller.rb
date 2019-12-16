@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show,:edit,:update,:destroy]
-  before_action :authenticate_user!,except: [:index,:show]
+  before_action :set_category, only: [:show,:edit,:update,:destroy,:books]
+  before_action :authenticate_user!,except: [:index,:show,:books]
   def index
     @categories = Category.all
   end
@@ -48,6 +48,10 @@ class CategoriesController < ApplicationController
        format.html {redirect_to categories_path,notice: "Category successfully destroyed"}
        format.json {head :no_content}
      end
+  end
+
+  def books
+     @books = @category.books
   end
 
   private
