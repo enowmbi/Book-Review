@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
 
-  belongs_to :user
-  belongs_to :category
+  belongs_to :user,counter_cache: true
+  belongs_to :category,counter_cache: true
   has_many :reviews, dependent: :destroy
 
   has_one_attached :image
