@@ -50,7 +50,7 @@
       </div>
       <div>
         <% if f.object.photo.attached? %>
-          <%= image_tag(f.object.photo.variant(resize: "350x350"),class:"img-responsive img-thumbnail") %>
+          <%= image_tag(f.object.large,class:"img-responsive img-thumbnail") %>
         <% else %>
           <span class="fa fa-user fa-8x">
           <% end %>
