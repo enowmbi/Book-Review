@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12">
-    <h1><%= t('.title', resource: resource_name.to_s.humanize) %></h1>
+    <h1>Edit User Account</h1>
   </div>
 </div>
 
@@ -16,30 +16,15 @@
         <%= f.label :last_name %>
         <%= f.text_field :last_name, class:"form-control" %>
       </div>
-    </div>
-    <div class="col-sm-12 col-md-4">
       <div class="form-group">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
+        <%= f.label :username %>
+        <%= f.text_field :username, autofocus: true, autocomplete: 'username', class: 'form-control' %>
       </div>
-      <div>
-        <% if f.object.image.attached? %>
-          <%= image_tag(f.object.image.variant(resize: "150x150"),class:"img-responsive img-thumbnail") %>
-        <% else %>
-          <span class="fa fa-user fa-8x">
-          <% end %>
-      </div>
-
     </div>
     <div class="col-sm-12 col-md-4">
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :username %>
-        <%= f.text_field :username, autofocus: true, autocomplete: 'username', class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :password %>
@@ -57,11 +42,26 @@
         <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
       </div>
     </div>
+
+    <div class="col-sm-12 col-md-4">
+      <div class="form-group">
+        <%= f.label :photo %>
+        <%= f.file_field :photo %>
+      </div>
+      <div>
+        <% if f.object.photo.attached? %>
+          <%= image_tag(f.object.photo.variant(resize: "350x350"),class:"img-responsive img-thumbnail") %>
+        <% else %>
+          <span class="fa fa-user fa-8x">
+          <% end %>
+      </div>
+
+    </div>
   </div>
 
   <div class="row">
     <div class="col-12 text-center">
-      <%= f.submit t('.update'), class: 'btn btn-primary' %>
+      <%= f.submit 'Update', class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>
