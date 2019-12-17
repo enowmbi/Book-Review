@@ -6,10 +6,14 @@
 </p>
 
 <p>
-  <strong>Description </strong>
+  <strong>Description: </strong>
   <%= @category.description %>
 </p>
 
+<p>
+  <strong> No. of Books in this category: </strong>
+  <%= @category.books_count %>
+</p>
 <% if current_user && current_user.admin? == true %>
   <%= link_to 'Edit', edit_category_path %>
   | 
