@@ -1,13 +1,13 @@
 <<div class="row">
   <div class="col-12">
-    <h1 class="page-title text-center"><%= "Profile : #{@user.full_name.to_s.humanize}" %></h1>
+    <h1 class="page-title text-center"><%= "Profile : #{@user.full_name}" %></h1>
     <hr/>
   </div>
 </div>
 
 <%= form_with(model: @user,local: true,class:"form-horizontal") do |f| %>
   <div class="row">
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-6">
       <div class="form-group">
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class:"form-control", readonly: true %>
@@ -17,13 +17,13 @@
         <%= f.text_field :last_name, class:"form-control", readonly: true %>
       </div>
     </div>
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-6">
 
       <div class="form-group">
         </div>
       <div class="text-center">
-        <% if @user.image.attached? %>
-          <%= image_tag(@user.medium,class: "img-responsive img-thumbnail") %>
+        <% if @user.photo.attached? %>
+          <%= image_tag(@user.large,class: "img-responsive img-thumbnail") %>
         <% else %>
           <span class="fa fa-users fa-10x">
           <% end %>
@@ -31,20 +31,29 @@
     </div> 
   </div>
 <% end %>
-<% if user_signed_in? && current_user.admin? %>
+<% if user_signed_in? && current_user.id == @user.id %>
   <div class="row">
     <div class="col-12 text-center">
-      <%= link_to("Edit Profile",edit_user_registration_path,class:"btn btn-outline-primary") %>
+      <%= link_to("Edit User Account",edit_user_registration_path,class:"btn btn-outline-primary") %>
     </div>
   </div>
 <% end %>
 <hr/>
 <div class="row">
-  <div class="col-md-12 col-sm-12">
-    <h5 class="text-center">Latest Books <sup><span class="badge badge-pill badge-secondary "><%= @user.books.count %> </span><sup></h5>
+  <div class="col-md-6 col-sm-12">
+    <h5 class="text-center">My Books <sup><span class="badge badge-pill badge-secondary "><%= @user.books_count %> </span><sup></h5>
     <ol>
       <% @user.books.each do |book|  %>
         <li><h6><%= link_to(book.title.capitalize,book_path(book)) %></h6></li>
+        <hr/>
+      <% end %>
+    </ol>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <h5 class="text-center">My Reviews <sup><span class="badge badge-pill badge-secondary "><%= @user.reviews_count %> </span><sup></h5>
+    <ol>
+      <% @user.reviews.each do |review|  %>
+        <li><h6><%= link_to(review.comment,book_path(review.book)) %></h6></li>
         <hr/>
       <% end %>
     </ol>
