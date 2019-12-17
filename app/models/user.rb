@@ -15,11 +15,15 @@ class User < ApplicationRecord
 
 
   def thumbnail
-    return self.image.variant(resize: '150x150').processed
+    return self.photo.variant(resize: '150x150').processed
   end
 
   def medium
-    return self.image.variant(resize: '250x250').processed
+    return self.photo.variant(resize: '250x250').processed
+  end
+
+  def large
+   return self.photo.variant(resize: '350x350').processed
   end
 
   def full_name
