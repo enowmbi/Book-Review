@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 #Use webpacker to manage javascript
 gem 'webpacker'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails' 
+gem 'coffee-rails','~>5.0'
   
   # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
