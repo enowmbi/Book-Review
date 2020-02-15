@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2.1'
@@ -11,14 +11,10 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6.0'
-# Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 #Use webpacker to manage javascript
 gem 'webpacker'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails','~>5.0'
   
   # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -30,7 +26,6 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
 gem 'image_processing','~>1.2'
 
 # Use Capistrano for deployment
@@ -40,9 +35,6 @@ gem 'image_processing','~>1.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 #Use front-end libraries - twitter bootstrap,font-awesome and jquery
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
-gem 'bootstrap','>=4.3.1'
-gem 'jquery-rails'
 gem 'ratyrate'
 
 #Use devise for user authentication
@@ -51,11 +43,10 @@ gem 'devise','>=4.7.1'
 #Use will_paginate for pagination
 gem 'will_paginate'
 
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
+  gem 'rspec-rails','~>4.0.0.beta'
   gem 'factory_bot_rails'
   gem 'simplecov',require: false
 end
