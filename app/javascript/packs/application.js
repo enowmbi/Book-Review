@@ -18,3 +18,13 @@
 
 // require("trix")
 // require("@rails/actiontext")onsole.log('Hello World from Webpacker')
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("@rails/activestorage").start();
+require("channels");
+
+import "bootstrap";
+import "jquery";
+import "popper.js";
+import "font-awesome";
+import "raty-js";
