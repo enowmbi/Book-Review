@@ -12,6 +12,8 @@ gem 'puma', '~> 4.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
+# using coffee-rails
+# gem 'coffee-rails'
 # gem 'mini_racer', platforms: :ruby
 #Use webpacker to manage javascript
 gem 'webpacker'
