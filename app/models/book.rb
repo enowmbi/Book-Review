@@ -36,4 +36,8 @@ class Book < ApplicationRecord
     end
   end
 
+  def allow_user_review(user)
+    return true if Review.where(book_id: self.id, user_id: user.id ).blank?
+  end
+
 end
