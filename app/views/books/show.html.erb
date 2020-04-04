@@ -17,7 +17,7 @@
 
     <p>
       <h5><strong> Average Rating :</strong></h5> <div class="average-review-rating" data-score="<%= @average_rating %>"></div>
-        
+
       <div><i><%= " (based on #{pluralize(@book.reviews_count,'review')})" %></i></div>
     </p>
     <p class="text-justify">
@@ -33,9 +33,13 @@
     <% end %>
   </div>
   <div class="col-md-6">
-    <% if user_signed_in? %>
+    <% if user_signed_in? && @book.allow_user_review(current_user) %>
       <p>
         <%= link_to('Add Review',new_book_review_path(@book),class: "btn btn-outline-primary")  %>
+      </p>
+    <% else %>
+      <p class="alert alert-info">
+        You have a review for this product already.
       </p>
     <% end %>
 
