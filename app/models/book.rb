@@ -21,6 +21,19 @@ class Book < ApplicationRecord
 
   default_scope ->{ order("Updated_at DESC")}
 
+  def allow_user_review?(user)
+    return true if Review.where(book_id: self.id, user_id: user.id ).blank?
+  end
+
+  def average_rating
+    reviews = self.reviews
+    if reviews.blank?
+      return 0
+    else
+      return reviews.average(:rating).round(2)
+    end
+  end
+
   private 
   def validate_image
     if image.attached? == false
@@ -33,19 +46,6 @@ class Book < ApplicationRecord
           errors.add(:image, 'size should not be greater 1,200 KB ')
         end
       end
-    end
-  end
-
-  def allow_user_review?(user)
-    return true if Review.where(book_id: self.id, user_id: user.id ).blank?
-  end
-
-  def average_rating
-    reviews = self.reviews
-    if reviews.blank?
-      return 0
-    else
-      return reviews.average(:rating).round(2)
     end
   end
 
