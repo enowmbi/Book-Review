@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show,:edit,:update,:destroy]
 
   def index 
-    @books = Book.all.paginate(page: params[:page],per_page: 8)
+    @books = Book.all.includes(:reviews).paginate(page: params[:page],per_page: 8)
   end
 
   def show
@@ -55,7 +55,7 @@ class BooksController < ApplicationController
   private 
 
   def set_book
-    @book = Book.find(params[:id])
+    @book = Book.includes(:reviews).find(params[:id])
   end
 
   def book_params
