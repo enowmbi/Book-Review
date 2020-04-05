@@ -34,6 +34,11 @@
   </div>
   <div class="col-md-6">
     <% if user_signed_in? && @book.allow_user_review?(current_user) %>
+      <% if @book.reviews_count == 0 %>
+        <div class='alert alert-primary'>
+          Be the first to comment on this book !
+        </div>
+      <% end %>
       <p>
         <%= link_to('Add Review',new_book_review_path(@book),class: "btn btn-outline-primary")  %>
       </p>
