@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController 
-  before_action :set_book
+  before_action :set_book, only:[:new,:create,:edit]
   before_action :set_review, only: [:edit,:update,:destroy]
 
   def new 
@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-       redirect_to book_path(@book)
+      redirect_to book_path(@review.book),notice: "Review was successfully updated"
     else
        render 'edit'
     end
