@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 2021_11_01_071742) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
-    t.integer "books_count", default: 0, null: false
     t.integer "reviews_count", default: 0, null: false
+    t.integer "books_count", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
